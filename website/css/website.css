@@ -121,7 +121,9 @@ div.main_navigator
 	float: left;
 	display: none;
 }
-
+div#main_navigator_splitter {
+	display: none;
+}
 div.main_splitter
 {
 	width: 10px;
