@@ -140,7 +140,7 @@ class SettingsModelDisplaySection extends SettingsSection
 {
     constructor (parentDiv)
     {
-        super (parentDiv, 'Model Display');
+        super (parentDiv, '模型展示');
 
         this.environmentMapButton = null;
         this.environmentMapPopup = null;
@@ -172,7 +172,7 @@ class SettingsModelDisplaySection extends SettingsSection
 
         let backgroundColorDiv = AddDiv (this.contentDiv, 'ov_sidebar_parameter');
         let backgroundColorInput = AddDiv (backgroundColorDiv, 'ov_color_picker');
-        AddDiv (backgroundColorDiv, null, 'Background Color');
+        AddDiv (backgroundColorDiv, null, '背景色');
         let predefinedBackgroundColors = ['#ffffff', '#e3e3e3', '#c9c9c9', '#898989', '#5f5f5f', '#494949', '#383838', '#0f0f0f'];
         this.backgroundColorPicker = AddColorPicker (backgroundColorInput, settings.backgroundColor, predefinedBackgroundColors, (color) => {
             settings.backgroundColor = color;
@@ -181,7 +181,7 @@ class SettingsModelDisplaySection extends SettingsSection
 
         let edgeParameterDiv = AddDiv (this.contentDiv, 'ov_sidebar_parameter');
         this.edgeDisplayToggle = AddToggle (edgeParameterDiv, 'ov_sidebar_parameter_toggle');
-        AddDiv (edgeParameterDiv, 'ov_sidebar_parameter_text', 'Show Edges');
+        AddDiv (edgeParameterDiv, 'ov_sidebar_parameter_text', '显示边线');
 
         this.edgeSettingsDiv = AddDiv (this.contentDiv, 'ov_sidebar_settings_padded');
         this.edgeDisplayToggle.OnChange (() => {
@@ -198,11 +198,11 @@ class SettingsModelDisplaySection extends SettingsSection
             settings.edgeColor = color;
             callbacks.onEdgeColorChange ();
         });
-        AddDiv (edgeColorRow, null, 'Edge Color');
+        AddDiv (edgeColorRow, null, '边线颜色');
 
         let thresholdRow = AddDiv (this.edgeSettingsDiv, 'ov_sidebar_settings_row large');
         this.thresholdSlider = AddRangeSlider (thresholdRow, 0, 90);
-        this.thresholdSlider.setAttribute ('title', 'Edge Angle Threshold');
+        this.thresholdSlider.setAttribute ('title', '边线角度阈值');
         this.thresholdSliderValue = AddDomElement (thresholdRow, 'span', 'ov_slider_label');
         this.thresholdSlider.addEventListener ('input', () => {
             this.thresholdSliderValue.innerHTML = this.thresholdSlider.value;
@@ -304,7 +304,7 @@ class SettingsAppearanceSection extends SettingsSection
 {
     constructor (parentDiv)
     {
-        super (parentDiv, 'Appearance');
+        super (parentDiv, '外观');
         this.darkModeToggle = null;
     }
 
@@ -317,7 +317,7 @@ class SettingsAppearanceSection extends SettingsSection
             settings.themeId = (this.darkModeToggle.GetStatus () ? Theme.Dark : Theme.Light);
             callbacks.onThemeChange ();
         });
-        AddDiv (darkModeParameterDiv, null, 'Dark Mode');
+        AddDiv (darkModeParameterDiv, null, '黑暗模式');
 
         let isDarkMode = (settings.themeId === Theme.Dark);
         this.darkModeToggle.SetStatus (isDarkMode);
@@ -344,7 +344,7 @@ export class SidebarSettingsPanel extends SidebarPanel
         this.importParametersSection = new SettingsImportParametersSection (this.sectionsDiv);
         this.appearanceSection = new SettingsAppearanceSection (this.sectionsDiv);
 
-        this.resetToDefaultsButton = AddDiv (this.contentDiv, 'ov_button ov_panel_button outline', 'Reset to Default');
+        this.resetToDefaultsButton = AddDiv (this.contentDiv, 'ov_button ov_panel_button outline', '回到默认');
         this.resetToDefaultsButton.addEventListener ('click', () => {
             this.ResetToDefaults ();
         });

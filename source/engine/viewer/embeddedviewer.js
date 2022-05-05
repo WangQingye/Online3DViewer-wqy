@@ -69,14 +69,14 @@ export class EmbeddedViewer
             onLoadStart : () => {
                 this.canvas.style.display = 'none';
                 progressDiv = document.createElement ('div');
-                progressDiv.innerHTML = 'Loading model...';
+                progressDiv.innerHTML = '加载模型...';
                 this.parentElement.appendChild (progressDiv);
             },
             onImportStart : () => {
-                progressDiv.innerHTML = 'Importing model...';
+                progressDiv.innerHTML = '导入模型...';
             },
             onVisualizationStart : () => {
-                progressDiv.innerHTML = 'Visualizing model...';
+                progressDiv.innerHTML = '加载模型...';
             },
             onModelFinished : (importResult, threeObject) => {
                 this.parentElement.removeChild (progressDiv);

@@ -205,9 +205,9 @@ export class MeasureTool
             this.panel.style.color = '#ffffff';
         }
         if (this.markers.length === 0) {
-            this.panel.innerHTML = 'Select a point.';
+            this.panel.innerHTML = '选择一个点.';
         } else if (this.markers.length === 1) {
-            this.panel.innerHTML = 'Select another point.';
+            this.panel.innerHTML = '选择另一个点.';
         } else {
             let calcResult = CalculateMarkerValues (this.markers[0], this.markers[1]);
 

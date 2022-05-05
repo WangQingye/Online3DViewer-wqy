@@ -46,7 +46,7 @@ export function ShowSharingDialog (fileList, settings, camera)
         }
 
         let section = AddDiv (parentDiv, 'ov_dialog_section');
-        AddDiv (section, 'ov_dialog_inner_title', 'Sharing Link');
+        AddDiv (section, 'ov_dialog_inner_title', '链接');
         let sharingLinkInput = AddCopyableTextInput (section, () => {
             HandleEvent ('model_shared', 'sharing_link');
             return GetSharingLink (modelFiles);
@@ -122,9 +122,9 @@ export function ShowSharingDialog (fileList, settings, camera)
     }
 
     let dialog = new ButtonDialog ();
-    let contentDiv = dialog.Init ('Share', [
+    let contentDiv = dialog.Init ('分享', [
         {
-            name : 'Close',
+            name : '关闭',
             onClick () {
                 dialog.Close ();
             }

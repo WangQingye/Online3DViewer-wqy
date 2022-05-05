@@ -70,26 +70,26 @@ export class ThreeModelLoaderUI
     {
         if (importError.code === ImportErrorCode.NoImportableFile) {
             return ShowMessageDialog (
-                'Something went wrong',
-                'No importable file found.',
+                '错误',
+                '没有可导入的文件.',
                 null
             );
         } else if (importError.code === ImportErrorCode.FailedToLoadFile) {
             return ShowMessageDialog (
-                'Something went wrong',
-                'Failed to load file for import.',
-                'The remote server refused to fulfill the request. Check if the url is correct, and make sure that CORS requests are allowed on the remote server.'
+                '错误',
+                '导入文件失败.',
+                '远程文件请求失败，请确认地址及服务器权限正确.'
             );
         } else if (importError.code === ImportErrorCode.ImportFailed) {
             return ShowMessageDialog (
-                'Something went wrong',
-                'Failed to import model.',
+                '错误',
+                '导入模型失败.',
                 importError.message
             );
         } else {
             return ShowMessageDialog (
-                'Something went wrong',
-                'Unknown error.',
+                '错误',
+                '未知错误.',
                 null
             );
         }

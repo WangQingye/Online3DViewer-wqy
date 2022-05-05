@@ -19,6 +19,7 @@ div.title
 {
 	padding: 6px 10px;
 	overflow: auto;
+	display: none;
 }
 
 div.title div.title_left
@@ -118,6 +119,7 @@ div.main_navigator
 	margin: 10px 0px 10px 0px;
 	overflow: none;
 	float: left;
+	display: none;
 }
 
 div.main_splitter
@@ -198,6 +200,7 @@ div.ov_property_table_custom
 	margin-top: 8px;
 	padding-top: 8px;
 	border-top: 1px solid var(--ov_border_color);
+	display: none;
 }
 
 div.ov_property_table div.ov_property_table_row
@@ -256,6 +259,7 @@ div.ov_bottom_floating_panel
 	box-sizing: border-box;
 	position: absolute;
 	bottom: 0px;
+	display: none;
 }
 
 div.ov_bottom_floating_panel div.ov_floating_panel_text

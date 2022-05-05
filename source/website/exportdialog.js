@@ -39,8 +39,8 @@ class ModelExporterUI
             return AddSelect (parameterValueDiv, values, defaultIndex);
         }
 
-        this.visibleOnlySelect = AddSelectItem (parametersDiv, 'Scope', ['Entire Model', 'Visible Only'], 1);
-        this.rotationSelect = AddSelectItem (parametersDiv, 'Rotation', ['No Rotation', '-90 Degrees', '90 Degrees'], 0);
+        // this.visibleOnlySelect = AddSelectItem (parametersDiv, 'Scope', ['Entire Model', 'Visible Only'], 1);
+        // this.rotationSelect = AddSelectItem (parametersDiv, 'Rotation', ['No Rotation', '-90 Degrees', '90 Degrees'], 0);
     }
 
     ExportModel (model, callbacks)
@@ -131,16 +131,16 @@ class ExportDialog
     Open (model, viewer)
     {
         let mainDialog = new ButtonDialog ();
-        let contentDiv = mainDialog.Init ('Export', [
+        let contentDiv = mainDialog.Init ('导出', [
             {
-                name : 'Close',
+                name : '关闭',
                 subClass : 'outline',
                 onClick () {
                     mainDialog.Close ();
                 }
             },
             {
-                name : 'Export',
+                name : '导出',
                 onClick : () => {
                     mainDialog.Close ();
                     this.ExportFormat (model, viewer);
@@ -148,7 +148,7 @@ class ExportDialog
             }
         ]);
 
-        let text = 'Select the format from the list below, and adjust the settings of the selected format.';
+        let text = '选择导出格式';
         AddDiv (contentDiv, 'ov_dialog_section', text);
 
         let formatRow = AddDiv (contentDiv, 'ov_dialog_row');
