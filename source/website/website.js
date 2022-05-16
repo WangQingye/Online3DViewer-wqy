@@ -538,9 +538,9 @@ export class Website
         //     });
         // });
         // AddSeparator (this.toolbar, ['only_on_model']);
-        AddButton (this.toolbar, 'fit', '将模型适配到窗口', ['only_on_model'], () => {
-            this.FitModelToWindow (false);
-        });
+        // AddButton (this.toolbar, 'fit', '将模型适配到窗口', ['only_on_model'], () => {
+        //     this.FitModelToWindow (false);
+        // });
         AddButton (this.toolbar, 'up_y', 'Y轴朝上', ['only_on_model'], () => {
             this.viewer.SetUpVector (Direction.Y, true);
         });
@@ -566,16 +566,16 @@ export class Website
         });
         this.measureTool.SetButton (measureToolButton);
         AddSeparator (this.toolbar, ['only_full_width', 'only_on_model']);
-        AddButton (this.toolbar, 'snapshot', '截图', ['only_full_width', 'only_on_model'], () => {
-            ShowSnapshotDialog (this.viewer);
-        });
-        AddButton (this.toolbar, 'export', '导出模型', ['only_full_width', 'only_on_model'], () => {
-            ShowExportDialog (this.model, this.viewer, {
-                isMeshVisible : (meshInstanceId) => {
-                    return this.navigator.IsMeshVisible (meshInstanceId);
-                }
-            });
-        });
+        // AddButton (this.toolbar, 'snapshot', '截图', ['only_full_width', 'only_on_model'], () => {
+        //     ShowSnapshotDialog (this.viewer);
+        // });
+        // AddButton (this.toolbar, 'export', '导出模型', ['only_full_width', 'only_on_model'], () => {
+        //     ShowExportDialog (this.model, this.viewer, {
+        //         isMeshVisible : (meshInstanceId) => {
+        //             return this.navigator.IsMeshVisible (meshInstanceId);
+        //         }
+        //     });
+        // });
         // AddButton (this.toolbar, 'share', 'Share model', ['only_full_width', 'only_on_model'], () => {
         //     ShowSharingDialog (importer.GetFileList (), this.settings, this.viewer.GetCamera ());
         // });

@@ -35,13 +35,13 @@ export class Settings
 
     SaveToCookies ()
     {
-        CookieSetStringVal ('ov_environment_map', this.environmentMapName);
-        CookieSetBoolVal ('ov_background_is_envmap', this.backgroundIsEnvMap);
-        CookieSetColorVal ('ov_background_color', this.backgroundColor);
-        CookieSetColorVal ('ov_default_color', this.defaultColor);
-        CookieSetBoolVal ('ov_show_edges', this.showEdges);
-        CookieSetColorVal ('ov_edge_color', this.edgeColor);
-        CookieSetIntVal ('ov_edge_threshold', this.edgeThreshold);
-        CookieSetIntVal ('ov_theme_id', this.themeId);
+        // CookieSetStringVal ('ov_environment_map', this.environmentMapName);
+        // CookieSetBoolVal ('ov_background_is_envmap', this.backgroundIsEnvMap);
+        // CookieSetColorVal ('ov_background_color', this.backgroundColor);
+        // CookieSetColorVal ('ov_default_color', this.defaultColor);
+        // CookieSetBoolVal ('ov_show_edges', this.showEdges);
+        // CookieSetColorVal ('ov_edge_color', this.edgeColor);
+        // CookieSetIntVal ('ov_edge_threshold', this.edgeThreshold);
+        // CookieSetIntVal ('ov_theme_id', this.themeId);
     }
 }

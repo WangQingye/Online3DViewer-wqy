@@ -50,8 +50,9 @@ export class ThreeModelLoaderUI
             },
             onLoadError : (importError) => {
                 progressDialog.Close ();
-                callbacks.onError (importError);
+                // callbacks.onError (importError);
                 this.modalDialog = this.ShowErrorDialog (importError);
+                callbacks.onFinish ({}, {});
             },
         });
     }
