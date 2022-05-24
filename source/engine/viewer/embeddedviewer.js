@@ -49,7 +49,7 @@ export class EmbeddedViewer
         });
     }
 
-    LoadModelFromUrls (modelUrls)
+    LoadModelFromUrls (modelUrls, onLoadSuccess, onLoadError)
     {
         this.viewer.Clear ();
 
@@ -92,11 +92,13 @@ export class EmbeddedViewer
                     this.viewer.SetUpVector (Direction.Y, false);
                 }
                 this.viewer.FitSphereToWindow (boundingSphere, false);
+                onLoadSuccess()
             },
             onTextureLoaded : () => {
                 this.viewer.Render ();
             },
             onLoadError : (importError) => {
+                onLoadError()
                 let message = 'Unknown error';
                 if (importError.code === ImportErrorCode.NoImportableFile) {
                     message = 'No importable file found';
