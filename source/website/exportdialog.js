@@ -46,19 +46,19 @@ class ModelExporterUI
     ExportModel (model, callbacks)
     {
         let settings = new ExporterSettings ();
-        if (this.visibleOnlySelect.selectedIndex === 1) {
-            settings.isMeshVisible = (meshInstanceId) => {
-                return callbacks.isMeshVisible (meshInstanceId);
-            };
-        }
+        // if (this.visibleOnlySelect.selectedIndex === 1) {
+        //     settings.isMeshVisible = (meshInstanceId) => {
+        //         return callbacks.isMeshVisible (meshInstanceId);
+        //     };
+        // }
 
-        if (this.rotationSelect.selectedIndex === 1) {
-            let matrix = new Matrix ().CreateRotationAxisAngle (new Coord3D (1.0, 0.0, 0.0), -Math.PI / 2.0);
-            settings.transformation.SetMatrix (matrix);
-        } else if (this.rotationSelect.selectedIndex === 2) {
-            let matrix = new Matrix ().CreateRotationAxisAngle (new Coord3D (1.0, 0.0, 0.0), Math.PI / 2.0);
-            settings.transformation.SetMatrix (matrix);
-        }
+        // if (this.rotationSelect.selectedIndex === 1) {
+        //     let matrix = new Matrix ().CreateRotationAxisAngle (new Coord3D (1.0, 0.0, 0.0), -Math.PI / 2.0);
+        //     settings.transformation.SetMatrix (matrix);
+        // } else if (this.rotationSelect.selectedIndex === 2) {
+        //     let matrix = new Matrix ().CreateRotationAxisAngle (new Coord3D (1.0, 0.0, 0.0), Math.PI / 2.0);
+        //     settings.transformation.SetMatrix (matrix);
+        // }
 
         let exporterModel = new ExporterModel (model, settings);
         if (exporterModel.MeshInstanceCount () === 0) {
